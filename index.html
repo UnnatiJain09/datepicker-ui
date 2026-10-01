@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="description"
+        content="A stylish and interactive datepicker UI built with HTML, CSS and JavaScript."
+    >
+
+    <title>Datepicker UI</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <main class="app">
+
+        <!-- ================================
+             TOP NAVIGATION
+        ================================= -->
+
+        <nav class="topbar">
+
+            <div class="brand">
+
+                <div class="brand-mark">
+                    D
+                </div>
+
+                <span>
+                    date<span>scape</span>
+                </span>
+
+            </div>
+
+
+            <button
+                id="theme-toggle"
+                class="theme-toggle"
+                type="button"
+                aria-label="Switch to dark mode"
+            >
+                ☾
+            </button>
+
+        </nav>
+
+
+        <!-- ================================
+             HERO
+        ================================= -->
+
+        <section class="hero">
+
+            <div class="hero-content">
+
+                <p class="eyebrow">
+                    PLAN YOUR MOMENTS
+                </p>
+
+                <h1>
+                    Pick a date.
+                    <span>Make it count.</span>
+                </h1>
+
+                <p class="hero-text">
+                    A simple, elegant way to explore your
+                    calendar and choose the perfect day.
+                </p>
+
+
+                <div class="floating-note">
+
+                    <span class="note-icon">
+                        ✦
+                    </span>
+
+                    <div>
+                        <strong>
+                            Your time matters.
+                        </strong>
+
+                        <small>
+                            Choose a moment worth remembering.
+                        </small>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- ================================
+                 VISUAL PANEL
+            ================================= -->
+
+            <div class="visual-panel">
+
+                <div class="sun-orb"></div>
+
+                <div class="visual-shape shape-one"></div>
+
+                <div class="visual-shape shape-two"></div>
+
+
+                <div class="image-card">
+
+                    <div class="image-overlay">
+
+                        <p>
+                            TODAY
+                        </p>
+
+                        <strong id="visual-date">
+                            —
+                        </strong>
+
+                    </div>
+
+                </div>
+
+
+                <div class="floating-card card-top">
+
+                    <span>
+                        ✨
+                    </span>
+
+                    <p>
+                        New day
+                    </p>
+
+                </div>
+
+
+                <div class="floating-card card-bottom">
+
+                    <span>
+                        📍
+                    </span>
+
+                    <p>
+                        Your moment
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================================
+             DATEPICKER
+        ================================= -->
+
+        <section class="datepicker-section">
+
+            <div class="calendar-container">
+
+                <!-- Calendar Header -->
+
+                <div class="calendar-header">
+
+                    <div>
+
+                        <p class="calendar-label">
+                            SELECT DATE
+                        </p>
+
+                        <h2 id="month-year">
+                            September 2026
+                        </h2>
+
+                    </div>
+
+
+                    <div class="calendar-navigation">
+
+                        <button
+                            id="prev-month"
+                            type="button"
+                            aria-label="Previous month"
+                        >
+                            ←
+                        </button>
+
+                        <button
+                            id="next-month"
+                            type="button"
+                            aria-label="Next month"
+                        >
+                            →
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Weekdays -->
+
+                <div class="weekdays">
+
+                    <span>Sun</span>
+                    <span>Mon</span>
+                    <span>Tue</span>
+                    <span>Wed</span>
+                    <span>Thu</span>
+                    <span>Fri</span>
+                    <span>Sat</span>
+
+                </div>
+
+
+                <!-- Calendar Days -->
+
+                <div
+                    id="calendar-days"
+                    class="calendar-days"
+                >
+                </div>
+
+
+                <!-- Calendar Actions -->
+
+                <div class="calendar-actions">
+
+                    <button
+                        id="today-btn"
+                        type="button"
+                        class="today-btn"
+                    >
+                        Today
+                    </button>
+
+                    <button
+                        id="clear-btn"
+                        type="button"
+                        class="clear-btn"
+                    >
+                        Clear
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <!-- ================================
+                 SELECTED DATE PANEL
+            ================================= -->
+
+            <aside class="selected-panel">
+
+                <div class="selected-top">
+
+                    <span class="mini-label">
+                        SELECTED DATE
+                    </span>
+
+                    <span class="selected-icon">
+                        ✦
+                    </span>
+
+                </div>
+
+
+                <div class="selected-date">
+
+                    <strong id="selected-day">
+                        —
+                    </strong>
+
+                    <div>
+
+                        <p id="selected-month">
+                            Choose a date
+                        </p>
+
+                        <span id="selected-weekday">
+                            —
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+                <div class="selected-divider"></div>
+
+
+                <div class="date-details">
+
+                    <div>
+
+                        <span>
+                            Day
+                        </span>
+
+                        <strong id="detail-day">
+                            —
+                        </strong>
+
+                    </div>
+
+
+                    <div>
+
+                        <span>
+                            Month
+                        </span>
+
+                        <strong id="detail-month">
+                            —
+                        </strong>
+
+                    </div>
+
+
+                    <div>
+
+                        <span>
+                            Year
+                        </span>
+
+                        <strong id="detail-year">
+                            —
+                        </strong>
+
+                    </div>
+
+                </div>
+
+
+                <div class="selected-message">
+
+                    <span>
+                        ✨
+                    </span>
+
+                    <p id="selection-message">
+                        Select a date from the calendar
+                    </p>
+
+                </div>
+                <div class="date-status" id="date-status">
+
+    <span class="status-dot"></span>
+
+    <span id="status-text">
+        No date selected
+    </span>
+
+</div>
+                <!-- ================================
+     DATE INSIGHT
+================================= -->
+
+<div class="date-insight">
+
+    <div class="insight-header">
+        <span>✦</span>
+        <strong>Date Insight</strong>
+    </div>
+
+    <div class="insight-grid">
+
+        <div class="insight-item">
+            <span>Weekday</span>
+            <strong id="insight-weekday">—</strong>
+        </div>
+
+        <div class="insight-item">
+            <span>Distance</span>
+            <strong id="insight-distance">—</strong>
+        </div>
+
+        <div class="insight-item">
+            <span>Week</span>
+            <strong id="insight-week">—</strong>
+        </div>
+
+        <div class="insight-item">
+            <span>Day of Year</span>
+            <strong id="insight-day-year">—</strong>
+        </div>
+
+    </div>
+
+</div>
+
+            </aside>
+
+        </section>
+
+
+        <!-- ================================
+             FOOTER
+        ================================= -->
+
+        <footer>
+
+            <p>
+                Crafted with HTML, CSS & JavaScript
+            </p>
+
+            <span>
+                dateScape
+            </span>
+
+        </footer>
+
+    </main>
+
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>

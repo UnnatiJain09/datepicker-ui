@@ -1,0 +1,2317 @@
+/* ======================================
+   RESET
+====================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+html {
+    scroll-behavior: smooth;
+}
+
+
+body {
+    min-height: 100vh;
+
+    font-family:
+        Inter,
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        sans-serif;
+
+    background:
+        linear-gradient(
+            135deg,
+            #f8f5ef 0%,
+            #f5f1e9 45%,
+            #ebe6dc 100%
+        );
+
+    color: #20231f;
+
+    transition:
+        background 0.4s ease,
+        color 0.4s ease;
+}
+
+
+/* ======================================
+   APP
+====================================== */
+
+.app {
+    width: min(1180px, 92%);
+
+    margin: 0 auto;
+
+    padding: 26px 0 25px;
+}
+
+
+/* ======================================
+   TOPBAR
+====================================== */
+
+.topbar {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    margin-bottom: 75px;
+}
+
+
+.brand {
+    display: flex;
+
+    align-items: center;
+
+    gap: 11px;
+
+    font-size: 20px;
+
+    font-weight: 800;
+
+    letter-spacing: -0.7px;
+}
+
+
+.brand > span span {
+    color: #b56a45;
+}
+
+
+.brand-mark {
+    width: 38px;
+    height: 38px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 12px;
+
+    background: #20231f;
+
+    color: #f8f5ef;
+
+    font-family: Georgia, serif;
+
+    font-size: 18px;
+
+    box-shadow:
+        0 8px 20px rgba(32, 35, 31, 0.18);
+}
+
+
+.theme-toggle {
+    width: 42px;
+    height: 42px;
+
+    border: 1px solid #d9d3c8;
+
+    border-radius: 50%;
+
+    background: rgba(255, 255, 255, 0.6);
+
+    color: #20231f;
+
+    font-size: 18px;
+
+    cursor: pointer;
+
+    transition:
+        transform 0.25s ease,
+        background 0.25s ease,
+        border-color 0.25s ease;
+}
+
+
+.theme-toggle:hover {
+    transform: rotate(15deg);
+
+    border-color: #b56a45;
+}
+
+
+/* ======================================
+   HERO
+====================================== */
+
+.hero {
+    display: grid;
+
+    grid-template-columns:
+        1fr
+        0.9fr;
+
+    gap: 75px;
+
+    align-items: center;
+
+    margin-bottom: 95px;
+}
+
+
+.hero-content {
+    position: relative;
+
+    z-index: 2;
+}
+
+
+.eyebrow {
+    margin-bottom: 18px;
+
+    color: #b56a45;
+
+    font-size: 11px;
+
+    font-weight: 800;
+
+    letter-spacing: 2px;
+}
+
+
+.hero h1 {
+    max-width: 590px;
+
+    font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
+    font-size: clamp(
+        48px,
+        6vw,
+        76px
+    );
+
+    line-height: 0.98;
+
+    letter-spacing: -4px;
+
+    font-weight: 500;
+}
+
+
+.hero h1 span {
+    display: block;
+
+    color: #b56a45;
+
+    font-style: italic;
+}
+
+
+.hero-text {
+    max-width: 480px;
+
+    margin-top: 27px;
+
+    color: #74766f;
+
+    font-size: 16px;
+
+    line-height: 1.8;
+}
+
+
+/* ======================================
+   FLOATING NOTE
+====================================== */
+
+.floating-note {
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 13px;
+
+    margin-top: 35px;
+
+    padding: 12px 17px;
+
+    border: 1px solid #ded8cd;
+
+    border-radius: 15px;
+
+    background:
+        rgba(255, 255, 255, 0.55);
+
+    backdrop-filter: blur(10px);
+
+    animation:
+        noteFloat 4s ease-in-out infinite;
+}
+
+
+.note-icon {
+    width: 36px;
+    height: 36px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 11px;
+
+    background: #ead8cb;
+
+    color: #a45736;
+
+    font-size: 15px;
+}
+
+
+.floating-note strong {
+    display: block;
+
+    margin-bottom: 3px;
+
+    font-family: Georgia, serif;
+
+    font-size: 13px;
+}
+
+
+.floating-note small {
+    color: #85867f;
+
+    font-size: 11px;
+}
+
+
+/* ======================================
+   VISUAL PANEL
+====================================== */
+
+.visual-panel {
+    position: relative;
+
+    min-height: 430px;
+
+    overflow: visible;
+}
+
+
+/* ======================================
+   IMAGE CARD
+====================================== */
+
+.image-card {
+    position: absolute;
+
+    inset: 20px 35px 20px 20px;
+
+    overflow: hidden;
+
+    border-radius: 30px;
+
+    background-image:
+        linear-gradient(
+            to top,
+            rgba(20, 23, 20, 0.58),
+            rgba(20, 23, 20, 0.02) 65%
+        ),
+        url("https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1000&q=85");
+
+    background-size: cover;
+
+    background-position: center;
+
+    box-shadow:
+        0 30px 60px rgba(61, 50, 40, 0.18);
+
+    transform:
+        rotate(2deg);
+
+    transition:
+        transform 0.6s ease;
+}
+
+
+.image-card:hover {
+    transform:
+        rotate(0deg)
+        scale(1.015);
+}
+
+
+.image-overlay {
+    position: absolute;
+
+    left: 28px;
+    bottom: 25px;
+
+    color: white;
+}
+
+
+.image-overlay p {
+    margin-bottom: 5px;
+
+    font-size: 10px;
+
+    font-weight: 800;
+
+    letter-spacing: 2px;
+
+    opacity: 0.75;
+}
+
+
+.image-overlay strong {
+    font-family: Georgia, serif;
+
+    font-size: 25px;
+
+    font-weight: 500;
+}
+
+
+/* ======================================
+   DECORATIVE ORBS
+====================================== */
+
+.sun-orb {
+    position: absolute;
+
+    top: -18px;
+    right: 10px;
+
+    width: 110px;
+    height: 110px;
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(
+            circle,
+            #e7b88e,
+            #d18b60 70%
+        );
+
+    opacity: 0.75;
+
+    filter: blur(1px);
+
+    animation:
+        orbFloat 5s ease-in-out infinite;
+}
+
+
+.visual-shape {
+    position: absolute;
+
+    border-radius: 50%;
+
+    pointer-events: none;
+}
+
+
+.shape-one {
+    width: 75px;
+    height: 75px;
+
+    left: -15px;
+    bottom: 0;
+
+    border: 1px solid #caa991;
+
+    animation:
+        slowRotate 12s linear infinite;
+}
+
+
+.shape-two {
+    width: 38px;
+    height: 38px;
+
+    right: -5px;
+    bottom: 70px;
+
+    background: #d9a07c;
+
+    opacity: 0.5;
+
+    animation:
+        orbFloat 4s ease-in-out infinite;
+}
+
+
+/* ======================================
+   FLOATING CARDS
+====================================== */
+
+.floating-card {
+    position: absolute;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 9px;
+
+    padding: 11px 15px;
+
+    border: 1px solid rgba(255, 255, 255, 0.7);
+
+    border-radius: 13px;
+
+    background:
+        rgba(255, 255, 255, 0.82);
+
+    backdrop-filter: blur(15px);
+
+    box-shadow:
+        0 12px 30px rgba(45, 39, 31, 0.12);
+
+    color: #353731;
+
+    font-size: 11px;
+
+    font-weight: 700;
+
+    z-index: 3;
+}
+
+
+.floating-card span {
+    font-size: 15px;
+}
+
+
+.card-top {
+    top: 60px;
+    right: -20px;
+
+    animation:
+        cardFloat 4s ease-in-out infinite;
+}
+
+
+.card-bottom {
+    bottom: 48px;
+    left: -18px;
+
+    animation:
+        cardFloat 4s 1s ease-in-out infinite;
+}
+
+
+/* ======================================
+   DATEPICKER SECTION
+====================================== */
+
+.datepicker-section {
+    display: grid;
+
+    grid-template-columns:
+        1.4fr
+        0.6fr;
+
+    gap: 22px;
+
+    align-items: stretch;
+}
+
+
+/* ======================================
+   CALENDAR CONTAINER
+====================================== */
+
+.calendar-container {
+    padding: 32px;
+
+    border: 1px solid #ded8cd;
+
+    border-radius: 25px;
+
+    background:
+        rgba(255, 255, 255, 0.7);
+
+    backdrop-filter: blur(15px);
+
+    box-shadow:
+        0 20px 50px rgba(61, 50, 40, 0.07);
+}
+
+
+.calendar-header {
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    margin-bottom: 28px;
+}
+
+
+.calendar-label,
+.mini-label {
+    margin-bottom: 6px;
+
+    color: #b56a45;
+
+    font-size: 10px;
+
+    font-weight: 800;
+
+    letter-spacing: 1.5px;
+}
+
+
+.calendar-header h2 {
+    font-family: Georgia, serif;
+
+    font-size: 27px;
+
+    font-weight: 500;
+
+    letter-spacing: -0.7px;
+}
+
+
+/* ======================================
+   NAVIGATION
+====================================== */
+
+.calendar-navigation {
+    display: flex;
+
+    gap: 7px;
+}
+
+
+.calendar-navigation button {
+    width: 38px;
+    height: 38px;
+
+    border: 1px solid #ded8cd;
+
+    border-radius: 11px;
+
+    background: white;
+
+    color: #353731;
+
+    cursor: pointer;
+
+    font-size: 17px;
+
+    transition:
+        transform 0.2s ease,
+        background 0.2s ease,
+        border-color 0.2s ease;
+}
+
+
+.calendar-navigation button:hover {
+    transform: translateY(-2px);
+
+    background: #f4eee8;
+
+    border-color: #caa991;
+}
+
+
+/* ======================================
+   WEEKDAYS
+====================================== */
+
+.weekdays {
+    display: grid;
+
+    grid-template-columns:
+        repeat(7, 1fr);
+
+    margin-bottom: 8px;
+}
+
+
+.weekdays span {
+    padding: 8px 0;
+
+    color: #989991;
+
+    text-align: center;
+
+    font-size: 10px;
+
+    font-weight: 800;
+
+    text-transform: uppercase;
+
+    letter-spacing: 0.5px;
+}
+
+
+/* ======================================
+   CALENDAR DAYS
+====================================== */
+
+.calendar-days {
+    display: grid;
+
+    grid-template-columns:
+        repeat(7, 1fr);
+
+    gap: 6px;
+}
+
+
+.calendar-day {
+    position: relative;
+
+    aspect-ratio: 1 / 1;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border: none;
+
+    border-radius: 13px;
+
+    background: transparent;
+
+    color: #353731;
+
+    font-family: inherit;
+
+    font-size: 13px;
+
+    cursor: pointer;
+
+    transition:
+        transform 0.2s ease,
+        background 0.2s ease,
+        color 0.2s ease;
+}
+
+
+.calendar-day:hover {
+    background: #f1e8e0;
+
+    color: #a45736;
+
+    transform: translateY(-2px);
+}
+
+
+.calendar-day.other-month {
+    color: #c5c2ba;
+}
+
+
+.calendar-day.today::after {
+    content: "";
+
+    position: absolute;
+
+    bottom: 7px;
+
+    width: 4px;
+    height: 4px;
+
+    border-radius: 50%;
+
+    background: #b56a45;
+}
+
+
+.calendar-day.selected {
+    background: #20231f;
+
+    color: white;
+
+    box-shadow:
+        0 7px 15px rgba(32, 35, 31, 0.18);
+
+    transform: scale(1.04);
+}
+
+
+.calendar-day.selected::after {
+    display: none;
+}
+
+
+/* ======================================
+   CALENDAR ACTIONS
+====================================== */
+
+.calendar-actions {
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    margin-top: 25px;
+
+    padding-top: 20px;
+
+    border-top: 1px solid #e6e0d7;
+}
+
+
+.today-btn,
+.clear-btn {
+    border: none;
+
+    background: transparent;
+
+    color: #a45736;
+
+    font-family: inherit;
+
+    font-size: 12px;
+
+    font-weight: 800;
+
+    cursor: pointer;
+
+    transition:
+        opacity 0.2s ease,
+        transform 0.2s ease;
+}
+
+
+.clear-btn {
+    color: #888980;
+}
+
+
+.today-btn:hover,
+.clear-btn:hover {
+    opacity: 0.7;
+
+    transform: translateY(-1px);
+}
+
+
+/* ======================================
+   SELECTED DATE PANEL
+====================================== */
+
+.selected-panel {
+    position: relative;
+
+    overflow: hidden;
+
+    padding: 30px;
+
+    border-radius: 25px;
+
+    background: #20231f;
+
+    color: white;
+
+    box-shadow:
+        0 25px 50px rgba(32, 35, 31, 0.16);
+}
+
+
+.selected-panel::before {
+    content: "";
+
+    position: absolute;
+
+    width: 180px;
+    height: 180px;
+
+    top: -80px;
+    right: -80px;
+
+    border-radius: 50%;
+
+    border: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+
+.selected-panel::after {
+    content: "";
+
+    position: absolute;
+
+    width: 120px;
+    height: 120px;
+
+    bottom: -55px;
+    left: -55px;
+
+    border-radius: 50%;
+
+    background: #b56a45;
+
+    opacity: 0.2;
+
+    filter: blur(5px);
+}
+
+
+.selected-top {
+    position: relative;
+
+    z-index: 2;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+}
+
+
+.selected-top .mini-label {
+    color: #dca487;
+}
+
+
+.selected-icon {
+    width: 34px;
+    height: 34px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 10px;
+
+    background: rgba(255, 255, 255, 0.08);
+
+    color: #e0a989;
+}
+
+
+/* ======================================
+   SELECTED DATE
+====================================== */
+
+.selected-date {
+    position: relative;
+
+    z-index: 2;
+
+    display: flex;
+
+    align-items: flex-end;
+
+    gap: 13px;
+
+    margin-top: 48px;
+}
+
+
+.selected-date > strong {
+    font-family: Georgia, serif;
+
+    font-size: 72px;
+
+    line-height: 0.8;
+
+    font-weight: 400;
+
+    letter-spacing: -4px;
+}
+
+
+.selected-date p {
+    margin-bottom: 6px;
+
+    font-family: Georgia, serif;
+
+    font-size: 17px;
+}
+
+
+.selected-date span {
+    color: #999d94;
+
+    font-size: 11px;
+}
+
+
+/* ======================================
+   DIVIDER
+====================================== */
+
+.selected-divider {
+    position: relative;
+
+    z-index: 2;
+
+    height: 1px;
+
+    margin: 35px 0 25px;
+
+    background:
+        rgba(255, 255, 255, 0.1);
+}
+
+
+/* ======================================
+   DATE DETAILS
+====================================== */
+
+.date-details {
+    position: relative;
+
+    z-index: 2;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 8px;
+}
+
+
+.date-details div {
+    padding: 12px;
+
+    border-radius: 11px;
+
+    background:
+        rgba(255, 255, 255, 0.06);
+}
+
+
+.date-details span {
+    display: block;
+
+    margin-bottom: 5px;
+
+    color: #8f938b;
+
+    font-size: 9px;
+
+    font-weight: 800;
+
+    text-transform: uppercase;
+
+    letter-spacing: 0.8px;
+}
+
+
+.date-details strong {
+    font-size: 12px;
+
+    font-weight: 600;
+}
+
+
+/* ======================================
+   SELECTED MESSAGE
+====================================== */
+
+.selected-message {
+    position: relative;
+
+    z-index: 2;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 9px;
+
+    margin-top: 30px;
+
+    padding: 13px;
+
+    border-radius: 12px;
+
+    background:
+        rgba(255, 255, 255, 0.06);
+}
+
+
+.selected-message span {
+    color: #dca487;
+
+    font-size: 14px;
+}
+
+
+.selected-message p {
+    color: #b4b7ae;
+
+    font-size: 10px;
+
+    line-height: 1.5;
+}
+
+
+/* ======================================
+   FOOTER
+====================================== */
+
+footer {
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    margin-top: 65px;
+
+    padding-top: 22px;
+
+    border-top: 1px solid #ded8cd;
+
+    color: #999a92;
+
+    font-size: 11px;
+}
+
+
+footer span {
+    color: #b56a45;
+
+    font-family: Georgia, serif;
+
+    font-size: 14px;
+}
+
+
+/* ======================================
+   ANIMATIONS
+====================================== */
+
+@keyframes noteFloat {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-5px);
+    }
+
+}
+
+
+@keyframes orbFloat {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-12px);
+    }
+
+}
+
+
+@keyframes cardFloat {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-7px);
+    }
+
+}
+
+
+@keyframes slowRotate {
+
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+
+}
+
+
+/* ======================================
+   DARK MODE
+====================================== */
+
+body.dark-mode {
+    background:
+        radial-gradient(
+            circle at top left,
+            #29231f 0%,
+            #171714 45%,
+            #0d0e0c 100%
+        );
+
+    color: #f4f1ea;
+}
+
+
+body.dark-mode .theme-toggle {
+    border-color: #403d37;
+
+    background: #242520;
+
+    color: #f4f1ea;
+}
+
+
+body.dark-mode .brand-mark {
+    background: #f4f1ea;
+
+    color: #20231f;
+}
+
+
+body.dark-mode .hero-text {
+    color: #a6a69f;
+}
+
+
+body.dark-mode .floating-note {
+    border-color: #3c3933;
+
+    background: rgba(36, 37, 32, 0.7);
+}
+
+
+body.dark-mode .floating-note small {
+    color: #999b94;
+}
+
+
+body.dark-mode .calendar-container {
+    border-color: #3c3933;
+
+    background:
+        rgba(29, 30, 26, 0.78);
+}
+
+
+body.dark-mode .calendar-navigation button {
+    border-color: #403d37;
+
+    background: #292a25;
+
+    color: #f4f1ea;
+}
+
+
+body.dark-mode .calendar-navigation button:hover {
+    background: #35362f;
+}
+
+
+body.dark-mode .calendar-day {
+    color: #ddd9d0;
+}
+
+
+body.dark-mode .calendar-day.other-month {
+    color: #5d5e57;
+}
+
+
+body.dark-mode .calendar-day:hover {
+    background: #3a332d;
+
+    color: #e3a98d;
+}
+
+
+body.dark-mode .calendar-day.selected {
+    background: #f4f1ea;
+
+    color: #20231f;
+}
+
+
+body.dark-mode .calendar-actions {
+    border-color: #3c3933;
+}
+
+
+body.dark-mode footer {
+    border-color: #3c3933;
+}
+
+
+body.dark-mode .image-card {
+    box-shadow:
+        0 30px 60px rgba(0, 0, 0, 0.3);
+}
+
+
+/* ======================================
+   FOCUS STATES
+====================================== */
+
+button:focus-visible {
+    outline: 3px solid rgba(181, 106, 69, 0.35);
+
+    outline-offset: 3px;
+}
+
+
+/* ======================================
+   RESPONSIVE
+====================================== */
+
+@media (max-width: 900px) {
+
+    .hero {
+        grid-template-columns: 1fr;
+
+        gap: 45px;
+    }
+
+
+    .visual-panel {
+        min-height: 390px;
+    }
+
+
+    .datepicker-section {
+        grid-template-columns: 1fr;
+    }
+
+
+    .selected-panel {
+        min-height: 350px;
+    }
+
+}
+
+
+@media (max-width: 600px) {
+
+    .app {
+        width: 90%;
+
+        padding-top: 20px;
+    }
+
+
+    .topbar {
+        margin-bottom: 50px;
+    }
+
+
+    .hero h1 {
+        font-size: 47px;
+
+        letter-spacing: -2.5px;
+    }
+
+
+    .hero-text {
+        font-size: 14px;
+    }
+
+
+    .visual-panel {
+        min-height: 330px;
+    }
+
+
+    .image-card {
+        inset: 15px 20px;
+
+        border-radius: 22px;
+    }
+
+
+    .card-top {
+        right: -5px;
+    }
+
+
+    .card-bottom {
+        left: -5px;
+    }
+
+
+    .calendar-container,
+    .selected-panel {
+        padding: 23px;
+
+        border-radius: 20px;
+    }
+
+
+    .calendar-header h2 {
+        font-size: 22px;
+    }
+
+
+    .calendar-days {
+        gap: 3px;
+    }
+
+
+    .calendar-day {
+        border-radius: 9px;
+
+        font-size: 12px;
+    }
+
+
+    .selected-date {
+        margin-top: 35px;
+    }
+
+
+    .selected-date > strong {
+        font-size: 62px;
+    }
+
+
+    footer {
+        flex-direction: column;
+
+        gap: 8px;
+
+        text-align: center;
+    }
+
+}
+
+
+/* ======================================
+   REDUCED MOTION
+====================================== */
+
+@media (prefers-reduced-motion: reduce) {
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+
+        animation-iteration-count: 1 !important;
+
+        transition-duration: 0.01ms !important;
+
+        scroll-behavior: auto !important;
+    }
+
+}
+/* ======================================
+   POLISH & MICRO-INTERACTIONS
+====================================== */
+
+/* Calendar entrance */
+
+.calendar-container,
+.selected-panel {
+    animation: panelReveal 0.7s ease both;
+}
+
+.selected-panel {
+    animation-delay: 0.12s;
+}
+
+@keyframes panelReveal {
+    from {
+        opacity: 0;
+        transform: translateY(18px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+/* ======================================
+   CALENDAR DAY ANIMATION
+====================================== */
+
+.calendar-day {
+    animation: dayAppear 0.35s ease both;
+}
+
+@keyframes dayAppear {
+    from {
+        opacity: 0;
+        transform: scale(0.85);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+
+/* Staggered appearance */
+
+.calendar-day:nth-child(1) {
+    animation-delay: 0.02s;
+}
+
+.calendar-day:nth-child(2) {
+    animation-delay: 0.03s;
+}
+
+.calendar-day:nth-child(3) {
+    animation-delay: 0.04s;
+}
+
+.calendar-day:nth-child(4) {
+    animation-delay: 0.05s;
+}
+
+.calendar-day:nth-child(5) {
+    animation-delay: 0.06s;
+}
+
+.calendar-day:nth-child(6) {
+    animation-delay: 0.07s;
+}
+
+.calendar-day:nth-child(7) {
+    animation-delay: 0.08s;
+}
+
+
+/* ======================================
+   DAY HOVER
+====================================== */
+
+.calendar-day:not(.other-month):hover {
+    transform: translateY(-3px) scale(1.04);
+}
+
+
+/* ======================================
+   SELECTED DATE
+====================================== */
+
+.calendar-day.selected {
+    animation: selectedPop 0.35s ease;
+}
+
+@keyframes selectedPop {
+    0% {
+        transform: scale(0.8);
+    }
+
+    60% {
+        transform: scale(1.12);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+
+/* ======================================
+   TODAY INDICATOR
+====================================== */
+
+.calendar-day.today {
+    position: relative;
+}
+
+.calendar-day.today::after {
+    content: "";
+    position: absolute;
+
+    width: 5px;
+    height: 5px;
+
+    bottom: 5px;
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    border-radius: 50%;
+
+    background: currentColor;
+
+    animation: todayPulse 1.8s ease-in-out infinite;
+}
+
+@keyframes todayPulse {
+    0%,
+    100% {
+        opacity: 0.45;
+        transform: translateX(-50%) scale(0.8);
+    }
+
+    50% {
+        opacity: 1;
+        transform: translateX(-50%) scale(1.2);
+    }
+}
+
+
+/* ======================================
+   NAVIGATION BUTTONS
+====================================== */
+
+.calendar-navigation button {
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+.calendar-navigation button:hover {
+    transform: translateY(-3px);
+}
+
+.calendar-navigation button:active {
+    transform: scale(0.92);
+}
+
+
+/* ======================================
+   TODAY / CLEAR BUTTONS
+====================================== */
+
+.today-btn,
+.clear-btn {
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+.today-btn:hover,
+.clear-btn:hover {
+    transform: translateY(-2px);
+}
+
+.today-btn:active,
+.clear-btn:active {
+    transform: scale(0.96);
+}
+
+
+/* ======================================
+   SELECTED PANEL
+====================================== */
+
+.selected-panel {
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+.selected-panel:hover {
+    transform: translateY(-4px);
+}
+
+
+/* ======================================
+   SELECTED DATE NUMBER
+====================================== */
+
+.selected-date strong {
+    animation: numberReveal 0.4s ease;
+}
+
+@keyframes numberReveal {
+    from {
+        opacity: 0;
+        transform: scale(0.75);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+
+/* ======================================
+   FLOATING MESSAGE
+====================================== */
+
+.selected-message {
+    transition:
+        transform 0.3s ease,
+        background 0.3s ease;
+}
+
+.selected-message:hover {
+    transform: translateX(4px);
+}
+
+
+/* ======================================
+   THEME BUTTON
+====================================== */
+
+.theme-toggle {
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+.theme-toggle:hover {
+    transform: rotate(15deg) scale(1.08);
+}
+
+.theme-toggle:active {
+    transform: scale(0.9);
+}
+
+
+/* ======================================
+   BRAND MARK
+====================================== */
+
+.brand-mark {
+    transition:
+        transform 0.3s ease;
+}
+
+.brand:hover .brand-mark {
+    transform: rotate(-8deg) scale(1.08);
+}
+
+
+/* ======================================
+   HERO IMAGE
+====================================== */
+
+.image-card {
+    transition:
+        transform 0.5s ease,
+        box-shadow 0.5s ease;
+}
+
+.image-card:hover {
+    transform: scale(1.025) rotate(0.4deg);
+}
+
+
+/* ======================================
+   FLOATING CARDS
+====================================== */
+
+.floating-card {
+    transition:
+        transform 0.35s ease,
+        box-shadow 0.35s ease;
+}
+
+.floating-card:hover {
+    transform: translateY(-7px) scale(1.03);
+}
+
+
+/* ======================================
+   FOCUS STATES
+====================================== */
+
+button:focus-visible {
+    outline: 3px solid currentColor;
+    outline-offset: 3px;
+}
+
+
+/* ======================================
+   REDUCED MOTION
+====================================== */
+
+@media (prefers-reduced-motion: reduce) {
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+
+}
+/* ======================================
+   PREMIUM DATEPICKER POLISH
+====================================== */
+
+/* ======================================
+   CALENDAR CONTAINER GLOW
+====================================== */
+
+.calendar-container {
+    position: relative;
+    overflow: hidden;
+}
+
+.calendar-container::before {
+    content: "";
+    position: absolute;
+
+    width: 220px;
+    height: 220px;
+
+    top: -120px;
+    right: -100px;
+
+    border-radius: 50%;
+
+    background: radial-gradient(
+        circle,
+        rgba(255, 190, 120, 0.16),
+        transparent 70%
+    );
+
+    pointer-events: none;
+}
+
+
+/* ======================================
+   MONTH HEADING
+====================================== */
+
+#month-year {
+    transition:
+        opacity 0.3s ease,
+        transform 0.3s ease;
+}
+
+
+/* ======================================
+   CALENDAR DAY HOVER GLOW
+====================================== */
+
+.calendar-day:not(.other-month):hover {
+    box-shadow:
+        0 8px 20px rgba(0, 0, 0, 0.08);
+}
+
+
+/* ======================================
+   SELECTED DATE GLOW
+====================================== */
+
+.calendar-day.selected {
+    position: relative;
+
+    box-shadow:
+        0 8px 20px rgba(0, 0, 0, 0.12);
+}
+
+.calendar-day.selected::before {
+    content: "";
+
+    position: absolute;
+
+    inset: -4px;
+
+    border-radius: inherit;
+
+    border: 1px solid currentColor;
+
+    opacity: 0.25;
+
+    animation: selectedRing 1.8s ease-in-out infinite;
+}
+
+@keyframes selectedRing {
+
+    0% {
+        transform: scale(0.92);
+        opacity: 0;
+    }
+
+    50% {
+        transform: scale(1);
+        opacity: 0.3;
+    }
+
+    100% {
+        transform: scale(1.08);
+        opacity: 0;
+    }
+
+}
+
+
+/* ======================================
+   TODAY SPECIAL EFFECT
+====================================== */
+
+.calendar-day.today:not(.selected) {
+    font-weight: 700;
+
+    box-shadow:
+        inset 0 0 0 1px currentColor;
+}
+
+
+/* ======================================
+   SELECTED PANEL DEPTH
+====================================== */
+
+.selected-panel {
+    position: relative;
+    overflow: hidden;
+}
+
+.selected-panel::before {
+    content: "";
+
+    position: absolute;
+
+    width: 180px;
+    height: 180px;
+
+    top: -90px;
+    right: -70px;
+
+    border-radius: 50%;
+
+    background: radial-gradient(
+        circle,
+        rgba(255, 255, 255, 0.12),
+        transparent 70%
+    );
+
+    pointer-events: none;
+}
+
+
+/* ======================================
+   SELECTED DATE ICON
+====================================== */
+
+.selected-icon {
+    display: inline-flex;
+
+    transition:
+        transform 0.4s ease;
+}
+
+.selected-panel:hover .selected-icon {
+    transform:
+        rotate(180deg)
+        scale(1.15);
+}
+
+
+/* ======================================
+   DATE DETAILS
+====================================== */
+
+.date-details > div {
+    transition:
+        transform 0.25s ease,
+        opacity 0.25s ease;
+}
+
+.date-details > div:hover {
+    transform: translateY(-3px);
+}
+
+
+/* ======================================
+   FLOATING NOTE
+====================================== */
+
+.floating-note {
+    transition:
+        transform 0.35s ease,
+        box-shadow 0.35s ease;
+}
+
+.floating-note:hover {
+    transform:
+        translateY(-5px)
+        rotate(-1deg);
+
+    box-shadow:
+        0 15px 35px rgba(0, 0, 0, 0.08);
+}
+
+
+/* ======================================
+   IMAGE OVERLAY
+====================================== */
+
+.image-overlay {
+    transition:
+        transform 0.4s ease;
+}
+
+.image-card:hover .image-overlay {
+    transform: translateY(-5px);
+}
+
+
+/* ======================================
+   FLOATING IMAGE CARDS
+====================================== */
+
+.card-top {
+    animation:
+        cardFloatTop 4s ease-in-out infinite;
+}
+
+.card-bottom {
+    animation:
+        cardFloatBottom 5s ease-in-out infinite;
+}
+
+@keyframes cardFloatTop {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-8px);
+    }
+
+}
+
+@keyframes cardFloatBottom {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(7px);
+    }
+
+}
+
+
+/* ======================================
+   BUTTON SHINE EFFECT
+====================================== */
+
+.today-btn,
+.clear-btn {
+    position: relative;
+    overflow: hidden;
+}
+
+.today-btn::after,
+.clear-btn::after {
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    left: -120%;
+
+    width: 70%;
+    height: 100%;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            rgba(255, 255, 255, 0.35),
+            transparent
+        );
+
+    transform: skewX(-20deg);
+
+    transition: left 0.6s ease;
+}
+
+.today-btn:hover::after,
+.clear-btn:hover::after {
+    left: 140%;
+}
+
+
+/* ======================================
+   NAVIGATION ARROW EFFECT
+====================================== */
+
+.calendar-navigation button:first-child:hover {
+    transform:
+        translateX(-3px)
+        scale(1.05);
+}
+
+.calendar-navigation button:last-child:hover {
+    transform:
+        translateX(3px)
+        scale(1.05);
+}
+
+
+/* ======================================
+   FOOTER
+====================================== */
+
+footer span {
+    transition:
+        letter-spacing 0.3s ease;
+}
+
+footer span:hover {
+    letter-spacing: 2px;
+}
+
+
+/* ======================================
+   DARK MODE POLISH
+====================================== */
+
+.dark-mode .calendar-day:not(.other-month):hover {
+    box-shadow:
+        0 8px 22px rgba(0, 0, 0, 0.3);
+}
+
+.dark-mode .calendar-day.selected {
+    box-shadow:
+        0 8px 25px rgba(0, 0, 0, 0.35);
+}
+
+
+/* ======================================
+   MOBILE POLISH
+====================================== */
+
+@media (max-width: 600px) {
+
+    .calendar-day:not(.other-month):hover {
+        transform: none;
+        box-shadow: none;
+    }
+
+    .selected-panel:hover {
+        transform: none;
+    }
+
+    .image-card:hover {
+        transform: none;
+    }
+
+}
+/* ======================================
+   DATE INSIGHT
+====================================== */
+
+.date-insight {
+    margin-top: 22px;
+    padding-top: 20px;
+
+    border-top: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.insight-header {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+
+    margin-bottom: 14px;
+
+    font-size: 13px;
+}
+
+.insight-header span {
+    font-size: 15px;
+}
+
+.insight-header strong {
+    font-weight: 600;
+}
+
+
+/* ======================================
+   INSIGHT GRID
+====================================== */
+
+.insight-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, 1fr);
+
+    gap: 10px;
+}
+
+
+/* ======================================
+   INSIGHT ITEM
+====================================== */
+
+.insight-item {
+    padding: 12px;
+
+    border-radius: 12px;
+
+    background:
+        rgba(255, 255, 255, 0.08);
+
+    transition:
+        transform 0.25s ease,
+        background 0.25s ease;
+}
+
+.insight-item:hover {
+    transform: translateY(-3px);
+
+    background:
+        rgba(255, 255, 255, 0.13);
+}
+
+.insight-item span {
+    display: block;
+
+    margin-bottom: 5px;
+
+    font-size: 10px;
+
+    text-transform: uppercase;
+
+    letter-spacing: 0.08em;
+
+    opacity: 0.65;
+}
+
+.insight-item strong {
+    display: block;
+
+    font-size: 13px;
+
+    font-weight: 600;
+}
+
+
+/* ======================================
+   INSIGHT ANIMATION
+====================================== */
+
+.insight-item {
+    animation: insightReveal 0.4s ease both;
+}
+
+.insight-item:nth-child(1) {
+    animation-delay: 0.05s;
+}
+
+.insight-item:nth-child(2) {
+    animation-delay: 0.1s;
+}
+
+.insight-item:nth-child(3) {
+    animation-delay: 0.15s;
+}
+
+.insight-item:nth-child(4) {
+    animation-delay: 0.2s;
+}
+
+@keyframes insightReveal {
+
+    from {
+        opacity: 0;
+        transform: translateY(8px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+}
+
+
+/* ======================================
+   MOBILE
+====================================== */
+
+@media (max-width: 600px) {
+
+    .insight-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+}
+/* ======================================
+   DATE STATUS
+====================================== */
+
+.date-status {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+
+    margin-top: 14px;
+    padding: 9px 12px;
+
+    border-radius: 10px;
+
+    background: rgba(255, 255, 255, 0.07);
+
+    font-size: 11px;
+
+    transition:
+        transform 0.3s ease,
+        background 0.3s ease;
+}
+
+.date-status:hover {
+    transform: translateX(3px);
+}
+
+.status-dot {
+    width: 7px;
+    height: 7px;
+
+    border-radius: 50%;
+
+    background: currentColor;
+
+    animation: statusPulse 1.8s ease-in-out infinite;
+}
+
+@keyframes statusPulse {
+
+    0%,
+    100% {
+        transform: scale(0.8);
+        opacity: 0.5;
+    }
+
+    50% {
+        transform: scale(1.15);
+        opacity: 1;
+    }
+}
+
+.date-status.today-status {
+    color: #65d68b;
+}
+
+.date-status.upcoming-status {
+    color: #79b8ff;
+}
+
+.date-status.past-status {
+    color: #b7b7b7;
+}
