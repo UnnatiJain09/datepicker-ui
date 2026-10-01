@@ -11,6 +11,8 @@ The project provides a custom calendar interface where users can navigate betwee
 ## 📸 Preview
 
 <img width="944" height="449" alt="Screenshot 2026-10-01 115046" src="https://github.com/user-attachments/assets/423b0cfb-c1a8-4af0-882c-ab234068365a" />
+<img width="827" height="465" alt="Screenshot 2026-10-01 115111" src="https://github.com/user-attachments/assets/c4d10284-a382-408f-af14-dad8893d56f8" />
+
 
 
 ## ✨ Features
