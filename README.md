@@ -6,7 +6,7 @@ The project provides a custom calendar interface where users can navigate betwee
 
 ## 🚀 Live Demo
 
-[View Live Datepicker](YOUR-LIVE-URL)
+https://unnatijain09.github.io/datepicker-ui/
 
 ## 📸 Preview
 
